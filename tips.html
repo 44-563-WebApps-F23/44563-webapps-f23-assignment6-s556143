@@ -30,6 +30,36 @@
             toShow = "Tip are: " + toShow;
             document.getElementById("result").innerHTML = toShow;
         }
-        </script>
+        function chooseOp() {
+            let base_amount = parseInt(document.getElementById("base_amount").value);
+            let tip = parseInt(document.getElementById("tip_percent").value);
+            let out = document.getElementById("calculate");
+            let value = 0;
+            let myOutput = "";
+            if (document.getElementById("sum").checked) {
+                value = base_amount + tip;
+                myOutput = "sum of " + base_amount + " and " + tip + " is " + value;
+            }
+            else if (document.getElementById("difference").checked) {
+                value = base_amount - tip;
+                myOutput = "difference of " + base_amount + " and " + tip + " is " + value;
+            }
+            else if (document.getElementById("product").checked) {
+                value = base_amount * tip;
+                myOutput = "product of " + base_amount + " and " + tip + " is " + value;
+            }
+            document.getElementById("calculate").innerHTML = myOutput;
+        }
+    </script>
+    <form>
+        <input type="radio" id="sum" name="sum" value="sum">
+        <label for="sum">Sum</label></br>
+        <input type="radio" id="difference" name="difference" value="difference">
+        <label for="difference">diff</label></br>
+        <input type="radio" id="product" name="product" value="product">
+        <label for="product">mult</label></br>
+        <input type="button" onclick="chooseOp()" value="Get Result">
+    </form>
+    <p id="calculate" style="font-weight: bold;">The result will be displayed here</p>
 </body>
 </html>
