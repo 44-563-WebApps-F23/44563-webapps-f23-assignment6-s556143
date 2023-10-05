@@ -27,17 +27,18 @@
         let price = document.getElementById("price").value;
         my_cruise["days"] = days;
         my_cruise["price"] = price;
-        document.getElementById("result").innerHTML = JSON.stringify(my_cruise);
+        document.getElementById("res").innerHTML = JSON.stringify(my_cruise);
     }
     </script>
     <p id="result">This text will be replaced </p>
 <br>
 <form>
     <label for="days">Enter the number of days </label>
-    <input type="text" id="days" name="days"> <br>
+    <input type="text" id="days" value="days"> <br>
     <label for="price">Enter price</label>
     <input type="text" id="price" name="price"> <br>
     <input type="button" onclick="updateCruise()" value="Update the Cruise" style="background-color: darkkhaki;color: brown;">
 </form>
+<p id="res">updated text will be replaced</p>
 </body>
 </html> 
